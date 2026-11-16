@@ -8,7 +8,6 @@ import ResourcePersons from '@/components/ResourcePersons';
 import Committee from '@/components/Committee';
 import PaymentSection from '@/components/PaymentSection';
 import RegistrationForm from '@/components/RegistrationForm';
-import BrochureSection from '@/components/BrochureSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 
@@ -26,7 +25,6 @@ export default function Home() {
         <Committee />
         <PaymentSection />
         <RegistrationForm />
-        <BrochureSection />
         <ContactSection />
       </main>
       <Footer />
