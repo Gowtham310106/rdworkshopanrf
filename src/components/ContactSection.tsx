@@ -1,76 +1,75 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Globe, Building2, User } from 'lucide-react';
+import { Mail, Phone, MapPin, Globe, Building2 } from 'lucide-react';
 
 export default function ContactSection() {
-  const contacts = [
+  const coordinators = [
     {
-      title: 'Convener',
+      role: 'Convener',
       name: 'Dr. B. Sridevi',
-      role: 'Dean – Research & Development | Professor & Head, Dept. of ECE',
+      title: 'Dean – Research & Development | Professor & Head, Dept. of ECE',
       email: 'bsd@velammalitech.edu.in',
     },
     {
-      title: 'Organising Coordinator',
+      role: 'Organising Coordinator',
       name: 'Dr. Madhu',
-      role: 'Department of Mechanical Engineering',
+      title: 'Department of Mechanical Engineering',
       phone: '+91 98416 07498',
       email: 'madhu@velammalitech.edu.in',
     },
     {
-      title: 'Organising Coordinator',
+      role: 'Organising Coordinator',
       name: 'Dr. J. Nandhagopal',
-      role: 'Department of Electrical & Electronics Engineering (EEE)',
+      title: 'Department of Electrical & Electronics Engineering (EEE)',
       phone: '+91 99946 58433',
       email: 'jnandhagopal.eee@velammalitech.edu.in',
     },
   ];
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-[#fafafa]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold tracking-widest uppercase text-blue-700 bg-blue-100 px-3 py-1 rounded-full">
-            Get in Touch
+        <div className="max-w-3xl mb-14">
+          <span className="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-md">
+            Connect
           </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Contact & Venue Information
+          <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900">
+            Contact & Venue Location
           </h2>
-          <p className="mt-2 text-slate-600 text-sm sm:text-base">
-            For registration queries, accommodation details, and workshop directions.
+          <p className="mt-3 text-base text-neutral-600 leading-relaxed">
+            Reach out to our organizing team for queries regarding registration, accommodation, and campus logistics.
           </p>
-          <div className="mt-2 w-20 h-1.5 bg-blue-700 mx-auto rounded-full"></div>
         </div>
 
-        {/* 3-Column Contact Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          {contacts.map((c, i) => (
+        {/* 3 Coordinators */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          {coordinators.map((c, i) => (
             <div
               key={i}
-              className="bg-slate-50 border border-slate-200 hover:border-blue-400 rounded-2xl p-6 transition-all shadow-xs flex flex-col justify-between"
+              className="bg-white border border-neutral-200 rounded-xl p-6 flex flex-col justify-between"
             >
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700 bg-blue-100/70 px-2.5 py-0.5 rounded-full inline-block mb-3">
-                  {c.title}
+                <span className="text-[11px] font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-2.5 py-0.5 rounded-md inline-block mb-3">
+                  {c.role}
                 </span>
-                <h4 className="text-lg font-bold text-slate-900">{c.name}</h4>
-                <p className="text-xs text-slate-600 mt-1 leading-snug">{c.role}</p>
+                <h4 className="text-base font-bold text-neutral-900">{c.name}</h4>
+                <p className="text-xs text-neutral-600 mt-1 leading-snug">{c.title}</p>
               </div>
 
-              <div className="mt-5 pt-4 border-t border-slate-200 space-y-2 text-xs">
+              <div className="mt-5 pt-3 border-t border-neutral-100 text-xs space-y-1.5">
                 {c.phone && (
-                  <div className="flex items-center gap-2">
-                    <Phone className="w-3.5 h-3.5 text-blue-700 shrink-0" />
-                    <a href={`tel:${c.phone}`} className="font-bold text-slate-800 hover:text-blue-700">
+                  <div className="flex items-center gap-2 text-neutral-800 font-semibold">
+                    <Phone className="w-3.5 h-3.5 text-neutral-400" />
+                    <a href={`tel:${c.phone}`} className="hover:text-orange-600">
                       {c.phone}
                     </a>
                   </div>
                 )}
                 {c.email && (
-                  <div className="flex items-center gap-2">
-                    <Mail className="w-3.5 h-3.5 text-blue-700 shrink-0" />
-                    <a href={`mailto:${c.email}`} className="text-slate-700 hover:text-blue-700 truncate">
+                  <div className="flex items-center gap-2 text-neutral-600">
+                    <Mail className="w-3.5 h-3.5 text-neutral-400" />
+                    <a href={`mailto:${c.email}`} className="hover:text-orange-600 truncate">
                       {c.email}
                     </a>
                   </div>
@@ -80,65 +79,50 @@ export default function ContactSection() {
           ))}
         </div>
 
-        {/* Institution Address & General Office */}
-        <div className="bg-gradient-to-br from-slate-900 to-blue-950 text-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-800">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        {/* Institutional Campus Details */}
+        <div className="bg-[#121216] text-white rounded-xl p-6 sm:p-8 border border-neutral-800">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
             
-            <div className="lg:col-span-8 space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-blue-600/30 text-blue-300 flex items-center justify-center">
-                  <Building2 className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-black text-white">
-                    Velammal Institute of Technology
-                  </h3>
-                  <p className="text-xs text-blue-200">
-                    “Velammal Knowledge Park”, Chennai–Kolkata Highway, Panchetti, Ponneri Taluk, Thiruvallur District – 601 204, Tamil Nadu, India.
-                  </p>
-                </div>
+            <div className="md:col-span-8 space-y-3">
+              <div className="flex items-center gap-2.5">
+                <Building2 className="w-5 h-5 text-orange-400" />
+                <h3 className="text-lg font-bold text-white">
+                  Velammal Institute of Technology
+                </h3>
               </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-3 text-xs text-slate-300">
-                <div className="flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-amber-400 shrink-0" />
+              <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed">
+                “Velammal Knowledge Park”, Chennai–Kolkata Highway, Panchetti, Ponneri Taluk, Thiruvallur District – 601 204, Tamil Nadu, India.
+              </p>
+              <div className="flex flex-wrap items-center gap-4 pt-1 text-xs text-neutral-300">
+                <div className="flex items-center gap-1.5">
+                  <Phone className="w-3.5 h-3.5 text-neutral-400" />
                   <span>College Office: <strong>044-26591841</strong></span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Globe className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <a
-                    href="https://www.velammalitech.edu.in"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-white underline"
-                  >
+                <div className="flex items-center gap-1.5">
+                  <Globe className="w-3.5 h-3.5 text-neutral-400" />
+                  <a href="https://www.velammalitech.edu.in" target="_blank" rel="noopener noreferrer" className="hover:underline">
                     www.velammalitech.edu.in
                   </a>
                 </div>
               </div>
             </div>
 
-            <div className="lg:col-span-4 flex flex-col items-center sm:items-end justify-center">
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 border border-white/10 text-center sm:text-right w-full sm:w-auto">
-                <span className="text-xs text-amber-300 font-bold uppercase tracking-wider block">
-                  Workshop Venue
-                </span>
-                <span className="text-base font-extrabold text-white block mt-1">
-                  Seminar Hall 1
-                </span>
-                <span className="text-xs text-slate-300 block">
-                  Velammal Institute of Technology
-                </span>
-                <a
-                  href="https://maps.google.com/?q=Velammal+Institute+of+Technology+Panchetti"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1.5 text-xs text-blue-200 hover:text-white font-bold bg-blue-800/60 hover:bg-blue-700 px-3 py-1.5 rounded-lg transition-all"
-                >
-                  <MapPin className="w-3.5 h-3.5 text-amber-400" />
-                  <span>Open in Google Maps</span>
-                </a>
-              </div>
+            <div className="md:col-span-4 flex flex-col sm:items-end justify-center">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-400 block mb-1">
+                Workshop Location
+              </span>
+              <span className="text-sm font-bold text-white block">
+                Seminar Hall 1
+              </span>
+              <a
+                href="https://maps.google.com/?q=Velammal+Institute+of+Technology+Panchetti"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex items-center gap-1.5 text-xs text-white bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 px-3 py-1.5 rounded-md transition-colors"
+              >
+                <MapPin className="w-3.5 h-3.5 text-orange-400" />
+                <span>Open in Google Maps</span>
+              </a>
             </div>
 
           </div>

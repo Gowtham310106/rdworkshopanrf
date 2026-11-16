@@ -1,77 +1,97 @@
 import React from 'react';
-import { Landmark, Users2, Cpu, Atom, Sparkles } from 'lucide-react';
+import { Landmark, ArrowUpRight } from 'lucide-react';
 
 export default function ResourcePersons() {
-  const organizations = [
-    { name: 'ANRF', desc: 'Anusandhan National Research Foundation' },
-    { name: 'DRDO', desc: 'Defence Research & Development Organisation' },
-    { name: 'MeitY', desc: 'Ministry of Electronics & IT' },
-    { name: 'DST', desc: 'Department of Science and Technology' },
-    { name: 'DBT', desc: 'Department of Biotechnology' },
-    { name: 'CSIR', desc: 'Council of Scientific & Industrial Research' },
-    { name: 'NIOT', desc: 'National Institute of Ocean Technology' },
-    { name: 'AICTE', desc: 'All India Council for Technical Education' },
-    { name: 'IIT Madras', desc: 'Premier Faculty & Research Mentors' },
-    { name: 'Industry Leaders', desc: 'Chief Technology Officers & R&D Heads' },
+  const bodies = [
+    {
+      code: 'ANRF',
+      title: 'Anusandhan National Research Foundation',
+      desc: 'National R&D grant strategy, peer-review expectations, and funding frameworks under India’s apex research foundation.',
+    },
+    {
+      code: 'DRDO',
+      title: 'Defence Research & Development Organisation',
+      desc: 'Mission-mode defense technologies, strategic funding mechanisms, and academia-defense translational programs.',
+    },
+    {
+      code: 'MeitY',
+      title: 'Ministry of Electronics & Information Technology',
+      desc: 'Semiconductor initiatives, AI mission frameworks, quantum technologies, and electronic hardware innovation.',
+    },
+    {
+      code: 'DST & DBT',
+      title: 'Department of Science and Tech / Biotechnology',
+      desc: 'Core research grants (CRG), interdisciplinary cyber-physical systems, and bio-engineering project proposals.',
+    },
+    {
+      code: 'CSIR & NIOT',
+      title: 'Council of Scientific & Industrial Research / NIOT',
+      desc: 'Applied industrial sciences, ocean engineering, environmental monitoring, and sustainable deep-sea technology.',
+    },
+    {
+      code: 'IIT Madras',
+      title: 'Indian Institute of Technology Madras',
+      desc: 'Distinguished faculty delivering technical masterclasses on advanced materials, robotics, AI, and proposal drafting.',
+    },
+    {
+      code: 'AICTE',
+      title: 'All India Council for Technical Education',
+      desc: 'Institutional innovation councils, research promotion schemes (RPS), and modern academic infrastructure funding.',
+    },
+    {
+      code: 'Industry Leaders',
+      title: 'Chief Technology Officers & Corporate R&D Heads',
+      desc: 'Translating TRL 1–4 laboratory findings into TRL 7–9 commercial products, IP strategies, and venture incubation.',
+    },
   ];
 
   return (
-    <section id="speakers" className="py-20 bg-white">
+    <section id="speakers" className="py-20 bg-[#fafafa] border-b border-neutral-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-xs font-bold tracking-widest uppercase text-blue-700 bg-blue-100 px-3 py-1 rounded-full">
-            Eminent Speakers & Mentors
+        <div className="max-w-3xl mb-14">
+          <span className="text-xs font-bold uppercase tracking-wider text-orange-600 bg-orange-50 px-3 py-1 rounded-md">
+            Distinguished Mentors
           </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Resource Persons
+          <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900">
+            Resource Persons & Participating Agencies
           </h2>
-          <p className="mt-3 text-slate-600 text-sm sm:text-base">
-            Lectures, interactive masterclasses, and hands-on proposal reviews delivered by scientists and leaders from premier national funding bodies, research institutes, and industry.
+          <p className="mt-3 text-base text-neutral-600 leading-relaxed">
+            Scientists from ANRF, DRDO, MeitY, DST, DBT, CSIR, NIOT and AICTE, faculty from IIT Madras, and industry experts shall deliver lectures and hands-on sessions.
           </p>
-          <div className="mt-2 w-20 h-1.5 bg-blue-700 mx-auto rounded-full"></div>
         </div>
 
-        {/* Agency Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-          {organizations.map((org, index) => (
+        {/* Directory Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {bodies.map((b) => (
             <div
-              key={index}
-              className="bg-slate-50 hover:bg-blue-50/60 border border-slate-200 hover:border-blue-300 rounded-2xl p-5 text-center transition-all duration-200 group flex flex-col items-center justify-center min-h-[130px]"
+              key={b.code}
+              className="bg-white border border-neutral-200 hover:border-neutral-400 rounded-xl p-5 sm:p-6 transition-all flex flex-col justify-between"
             >
-              <div className="w-10 h-10 rounded-full bg-blue-100 group-hover:bg-blue-600 text-blue-800 group-hover:text-white flex items-center justify-center mb-3 transition-colors">
-                <Landmark className="w-5 h-5" />
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-base font-extrabold text-neutral-900 tracking-tight">
+                    {b.code}
+                  </span>
+                  <span className="w-2 h-2 rounded-full bg-orange-500"></span>
+                </div>
+
+                <h4 className="text-xs font-semibold text-neutral-800 line-clamp-1 mb-2">
+                  {b.title}
+                </h4>
+
+                <p className="text-xs text-neutral-500 leading-relaxed">
+                  {b.desc}
+                </p>
               </div>
-              <h4 className="font-black text-slate-900 text-base group-hover:text-blue-700">
-                {org.name}
-              </h4>
-              <p className="text-[11px] text-slate-500 mt-1 line-clamp-2 leading-tight">
-                {org.desc}
-              </p>
+
+              <div className="mt-4 pt-3 border-t border-neutral-100 text-[11px] font-medium text-orange-600 flex items-center justify-between">
+                <span>Lecture & Mentoring</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </div>
             </div>
           ))}
-        </div>
-
-        {/* Quote / Highlight Box */}
-        <div className="mt-10 bg-gradient-to-r from-blue-900 via-indigo-900 to-blue-950 text-white rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg">
-          <div className="flex items-center gap-4">
-            <div className="p-3 bg-white/10 rounded-xl text-amber-300">
-              <Sparkles className="w-8 h-8" />
-            </div>
-            <div>
-              <h4 className="font-bold text-lg text-white">Direct Engagement with Funding Decision-Makers</h4>
-              <p className="text-xs sm:text-sm text-blue-200 mt-1">
-                Gain first-hand insights on what evaluation committees look for in high-priority national grant applications.
-              </p>
-            </div>
-          </div>
-          <a
-            href="#registration-form"
-            className="shrink-0 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-6 py-2.5 rounded-xl text-sm transition-all shadow-md"
-          >
-            Register Now
-          </a>
         </div>
 
       </div>

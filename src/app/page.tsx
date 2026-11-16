@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import SupportedBy from '@/components/SupportedBy';
 import AboutWorkshop from '@/components/AboutWorkshop';
 import Objectives from '@/components/Objectives';
 import Schedule from '@/components/Schedule';
@@ -17,6 +18,7 @@ export default function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
+        <SupportedBy />
         <AboutWorkshop />
         <Objectives />
         <Schedule />
